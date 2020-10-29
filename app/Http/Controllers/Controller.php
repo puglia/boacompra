@@ -22,7 +22,7 @@ class Controller extends BaseController
 	
 	function details($id){
 		$service = EntregaService::getInstance();
-		$entrega =  $service->geraTabelaCustos($id);
+		$entrega =  $service->buscaEntrega($id);
 		$tabelaCustos = $service->geraTabelaCustos($id);
 		
 		//Ordena pelo valor ascendente

@@ -58,7 +58,8 @@
                 text-transform: uppercase;
             }
 			table { 
-				width: 20%;
+				width: 48%;
+				margin-left:10%;
 			}
 			tr th { 
 				text-align: left;
@@ -72,26 +73,44 @@
     <body>
 	
         <div class="flex-center position-ref full-height">
-			
-			<table class="table table-hover tabela-responsiva">
-				<tr>
-					<th scope="col"> Modo de entrega</th>
-					<th scope="col"> valor total </th>
-				</tr>
+			<table>
+				<tr><td>
+					<table class="table table-hover tabela-responsiva">
+						<tr>
+							<th scope="col"> Produto</th>
+							<th scope="col"> Distância (Km) </th>
+							<th scope="col"> Peso (Kg) </th>
+						</tr>
 
-				@foreach ($custos as $custo)
-				<tr scope="row">
-					<td>
-						{{ $custo->modo->nomeEmpresa }}
-					</td>
-					<td>{{ 'R$' . number_format($custo->val, 2, ',', '.')  }}</td>
-				</tr>
-			
-				@endforeach
-			</table>
-			</br>
-			<span><a href="/"><< Voltar</a></span>
+						<tr scope="row">
+							<td>{{ $entrega->brinde->nome }}</td>
+							<td>{{ $entrega->distancia }}</td>
+							<td>{{ $entrega->brinde->peso }}</td>
+						</tr>
+					
+					</table>
+				</td></tr>
+			<tr><td>
+				<table class="table table-hover tabela-responsiva">
+					<tr>
+						<th scope="col"> Modo de entrega</th>
+						<th scope="col"> valor total </th>
+					</tr>
 
+					@foreach ($custos as $custo)
+					<tr scope="row">
+						<td>
+							{{ $custo->modo->nomeEmpresa }}
+						</td>
+						<td>{{ 'R$' . number_format($custo->val, 2, ',', '.')  }}</td>
+					</tr>
+				
+					@endforeach
+				</table>
+			</td></tr>
+			<tr><td>
+				<span><a href="/"><< Voltar</a></span>
+			</td></tr>
         </div>
 		
     </body>
