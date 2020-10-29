@@ -82,14 +82,17 @@
 				@foreach ($custos as $custo)
 				<tr scope="row">
 					<td>
-						{{ $custo['modo'] }}
+						{{ $custo->modo->nomeEmpresa }}
 					</td>
-					<td>{{ 'R$' . number_format($custo['val'], 2, ',', '.')  }}</td>
+					<td>{{ 'R$' . number_format($custo->val, 2, ',', '.')  }}</td>
 				</tr>
 			
 				@endforeach
 			</table>
+			</br>
+			<span><a href="/"><< Voltar</a></span>
 
         </div>
+		
     </body>
 </html>
